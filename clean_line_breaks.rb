@@ -1,7 +1,7 @@
 load './utils.rb'
 
-def clean_bad_line_breaks(raw_file)
-  f = File.open("cleaned_line_breaks.csv","w+")
+def clean_bad_line_breaks(raw_file, initial_file_path)
+  f = File.open("cleaned_line_breaks_for_#{initial_file_path}","w+")
 
   # first line, col names
   raw_first_line = raw_file.gets
