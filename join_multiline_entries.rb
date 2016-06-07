@@ -1,9 +1,8 @@
-def join_multilines_csv_entries(raw_file)
+def join_multilines_csv_entries(raw_file, file_name)
   f = File.open("joined_multilines_csv_entries_for_#{raw_file.path}","w+")
 
-  # first line is columns and second line is garbage
+  # First line / column headers
   f << raw_file.gets
-  raw_file.gets
 
   lines_to_join = []
 

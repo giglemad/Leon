@@ -4,9 +4,11 @@ load 'clean_line_breaks.rb'
 load 'join_multiline_entries.rb'
 
 def clean_csv_file(file_path)
-  f   = join_multilines_csv_entries(File.open(file_path, "r"))
-  ff  = clean_bad_line_breaks(File.open(f.path,"r"),file_path)
-  fff = remove_empty_columns(File.open(ff.path,"r"),file_path)
+  file_name = file_name.split(/\//).last
+
+  f   = join_multilines_csv_entries(File.open(file_path, "r"),file_name)
+  ff  = clean_bad_line_breaks(File.open(f.path,"r"),file_name)
+  fff = remove_empty_columns(File.open(ff.path,"r"),file_name)
 end
 
 def remove_empty_columns(messy_file, initial_file_path)
